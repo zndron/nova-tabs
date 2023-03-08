@@ -35,6 +35,7 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "php-cs-fixer": "vendor/bin/php-cs-fixer fix",
         "phpunit": "vendor/bin/phpunit",
