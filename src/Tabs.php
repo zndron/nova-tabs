@@ -42,8 +42,7 @@ class Tabs extends Panel
     public $currentColor = null;
     public string $errorColor = 'red';
 
-    /** @var string[] */
-    public $tabsClass = [];
+    public $tabsClass = null;
 
     /**
      * Create a new panel instance.
@@ -283,31 +282,16 @@ class Tabs extends Panel
             'retainTabPosition' => $this->retainTabPosition,
             'currentColor' => $this->currentColor,
             'errorColor' => $this->errorColor,
-            'tabsClass' => $this->getTabsClass(),
+            'tabsClass' => $this->tabsClass,
         ]);
 
         return $result;
     }
 
-    public function tabsClass($classes): self
+    public function withTabsClass(string $class): Tabs
     {
-        $this->tabsClass = Arr::wrap($classes);
+        $this->tabsClass = $class;
 
         return $this;
-    }
-
-    public function addTabsClass($classes): self
-    {
-        $this->tabsClass = array_merge($this->tabsClass, Arr::wrap($classes));
-
-        return $this;
-    }
-
-    /**
-     * @return string[]
-     */
-    public function getTabsClass(): array
-    {
-        return $this->tabsClass;
     }
 }
