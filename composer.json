@@ -20,14 +20,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Eminiarts\\Tabs\\": "src/",
-            "Eminiarts\\Tabs\\Tests\\": "tests/"
+            "Zndron\\Tabs\\": "src/",
+            "Zndron\\Tabs\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Eminiarts\\Tabs\\TabsServiceProvider"
+                "Zndron\\Tabs\\TabsServiceProvider"
             ]
         }
     },
