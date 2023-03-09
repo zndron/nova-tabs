@@ -1,6 +1,6 @@
 <template>
   <div :class="darkModeClass">
-    <div class="tab-group" :class="panel.tabClass">
+    <div class="tab-group" :class="panel.tabsClass">
       <slot>
         <Heading :level="1" v-text="panel.name" v-if="panel.showTitle"/>
 
