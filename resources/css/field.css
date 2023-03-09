@@ -48,3 +48,28 @@ form .tab-group .tab.fields-tab {
 .tabs-text-primary-500 {
     color:rgba(var(--colors-primary-500));
 }
+
+.tab-vertical .tab-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.tab-vertical .tab-card .block {
+    height: 100%;
+    border-right-width: 1px;
+}
+.tab-vertical .tab-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.tab-vertical .tab-item {
+    border-bottom-width: 1px;
+}
+.tab-vertical .tab {
+    width: 100%;
+}
