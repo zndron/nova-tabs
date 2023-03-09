@@ -42,7 +42,7 @@ class Tabs extends Panel
     public $currentColor = null;
     public string $errorColor = 'red';
 
-    public $tabsClass = null;
+    public $tabsClass = 'tab-horizontal';
 
     /**
      * Create a new panel instance.
@@ -69,9 +69,7 @@ class Tabs extends Panel
      */
     public function withSlug($slug): Tabs
     {
-
         $this->slug = is_bool($slug) ? ($slug ? Str::slug($this->preservedName, '_') : null) : $slug;
-
         return $this;
     }
 
@@ -83,9 +81,19 @@ class Tabs extends Panel
      */
     public function withCurrentColor(string $color): Tabs
     {
-
         $this->currentColor = $color;
+        return $this;
+    }
 
+    /**
+     * Set the class for tabs.
+     *
+     * @param string $class
+     * @return $this
+     */
+    public function tabsClass(string $class): self
+    {
+        $this->tabsClass = $class;
         return $this;
     }
 
@@ -97,9 +105,7 @@ class Tabs extends Panel
      */
     public function withErrorColor(string $color): Tabs
     {
-
         $this->errorColor = $color;
-
         return $this;
     }
 
@@ -130,7 +136,6 @@ class Tabs extends Panel
             ->each(function (Tab $tab): void {
                 $this->addFields($tab);
             });
-
 
         return $this->data ?? [];
     }
@@ -251,7 +256,6 @@ class Tabs extends Panel
     public function defaultSearch(bool $value = true): self
     {
         $this->defaultSearch = $value;
-
         return $this;
     }
 
@@ -264,7 +268,6 @@ class Tabs extends Panel
     public function showTitle(bool $show = true): self
     {
         $this->showTitle = $show;
-
         return $this;
     }
 
@@ -286,12 +289,5 @@ class Tabs extends Panel
         ]);
 
         return $result;
-    }
-
-    public function withTabsClass(string $class): Tabs
-    {
-        $this->tabsClass = $class;
-
-        return $this;
     }
 }

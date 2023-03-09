@@ -50,14 +50,12 @@ class Tab implements TabContract, JsonSerializable, Arrayable
     public function position(int $position): self
     {
         $this->position = $position;
-
         return $this;
     }
 
     public function name(string $name): self
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -65,7 +63,6 @@ class Tab implements TabContract, JsonSerializable, Arrayable
     {
         if (is_bool($condition) || is_callable($condition)) {
             $this->showIf = $condition;
-
             return $this;
         }
 
@@ -76,7 +73,6 @@ class Tab implements TabContract, JsonSerializable, Arrayable
     {
         if (is_bool($condition) || is_callable($condition)) {
             $this->showUnless = $condition;
-
             return $this;
         }
 
@@ -86,14 +82,12 @@ class Tab implements TabContract, JsonSerializable, Arrayable
     public function bodyClass($classes): self
     {
         $this->bodyClass = Arr::wrap($classes);
-
         return $this;
     }
 
     public function addBodyClass($classes): self
     {
         $this->bodyClass = array_merge($this->bodyClass, Arr::wrap($classes));
-
         return $this;
     }
 
@@ -136,7 +130,6 @@ class Tab implements TabContract, JsonSerializable, Arrayable
         if ($value instanceof Closure) {
             return $value();
         }
-
         return $value;
     }
 
