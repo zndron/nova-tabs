@@ -317,15 +317,6 @@ export default {
       return this.panel.errorColor ?? 'red';
     },
 
-    /**
-     * Get the class for tabs
-     *
-     * @returns {*|string}
-     */
-    getTabsClass() {
-      return this.panel.tabsClass ?? '';
-    }
-
   },
 
 }
